@@ -7,13 +7,13 @@ class RecipeInput extends Component {
     super();
     this.state = {
       ingredientComponents: [
-        <Row><Col className="center-block" sm={5}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
-        <Row><Col className="center-block" sm={5}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
-        <Row><Col className="center-block" sm={5}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
-        <Row><Col className="center-block" sm={5}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
+        <Row key={0}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
+        <Row key={1}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
+        <Row key={2}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
+        <Row key={3}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
       ],
     };
-    this.blankIngredientComponent = <Row><Col className="center-block" sm={5}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>;
+    this.rowKey = 4;
     this.addIngredient = this.addIngredient.bind(this);
   }
 
@@ -23,18 +23,18 @@ class RecipeInput extends Component {
         <form>
 
           <Row>
-            <Col className="center-block" sm={5}>
+            <Col className="center-block" sm={8}>
               <FormGroup bsSize="large">
-                  <ControlLabel>Recipe Name</ControlLabel>
+                  <ControlLabel className="Recipe-Label">Recipe Name</ControlLabel>
                   <FormControl type="text" autoFocus="true"/>
               </FormGroup>
             </Col>
           </Row>
 
           <Row>
-            <Col className="center-block" sm={5}>
+            <Col className="center-block" sm={8}>
               <FormGroup>
-                <ControlLabel>Ingredients</ControlLabel>
+                <ControlLabel className="Recipe-Label">Ingredients</ControlLabel>
                 <FormControl type="text"/>
               </FormGroup>
             </Col>
@@ -44,7 +44,7 @@ class RecipeInput extends Component {
 
           <Row>
             <FormGroup>
-              <Button className="Save-Button" type="submit">Save Recipe</Button>
+              <Button className="Save-Button" bsStyle="primary" type="submit">Save Recipe</Button>
               <Button className="Add-Button" bsSize="small" bsStyle="danger" onClick={this.addIngredient}> + </Button>
             </FormGroup>
           </Row>
@@ -54,13 +54,10 @@ class RecipeInput extends Component {
     );
   }
 
-  componentWillMount() {
-
-  }
-
   addIngredient() {
-    var incrementedList = this.state.ingredientComponents.concat(this.blankIngredientComponent);
+    var incrementedList = this.state.ingredientComponents.concat(<Row key={this.rowKey}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>);
     this.setState({ingredientComponents: incrementedList});
+    this.rowKey++;
   }
 }
 
