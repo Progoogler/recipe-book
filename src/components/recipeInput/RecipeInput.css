@@ -1,0 +1,23 @@
+.Recipe-Container {
+  width: 1000px;
+  margin: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-block {
+  float: none;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.Save-Button {
+  margin-left: 320px;
+}
+
+.Add-Button {
+  float: right;
+  margin-right: 320px;
+}
