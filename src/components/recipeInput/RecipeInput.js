@@ -7,13 +7,13 @@ class RecipeInput extends Component {
     super();
     this.state = {
       ingredientComponents: [
-        <Row key={0}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
-        <Row key={1}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
-        <Row key={2}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
-        <Row key={3}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>,
+        <FormControl key={1} className="margin-bottom" type="text"/>,
+        <FormControl key={2} className="margin-bottom" type="text"/>,
+        <FormControl key={3} className="margin-bottom" type="text"/>,
+        <FormControl key={4} className="margin-bottom" type="text"/>,
       ],
     };
-    this.rowKey = 4;
+    this.rowKey = 5;
     this.addIngredient = this.addIngredient.bind(this);
   }
 
@@ -35,16 +35,15 @@ class RecipeInput extends Component {
             <Col className="center-block" sm={8}>
               <FormGroup>
                 <ControlLabel className="Recipe-Label">Ingredients</ControlLabel>
-                <FormControl type="text"/>
+                {this.state.ingredientComponents}
               </FormGroup>
             </Col>
           </Row>
 
-          {this.state.ingredientComponents}
-
           <Row>
             <FormGroup>
               <Button className="Save-Button" bsStyle="primary" type="submit">Save Recipe</Button>
+              <Button className="Delete-Button">Delete</Button>
               <Button className="Add-Button" bsSize="small" bsStyle="danger" onClick={this.addIngredient}> + </Button>
             </FormGroup>
           </Row>
@@ -55,7 +54,7 @@ class RecipeInput extends Component {
   }
 
   addIngredient() {
-    var incrementedList = this.state.ingredientComponents.concat(<Row key={this.rowKey}><Col className="center-block" sm={8}><FormGroup><FormControl type="text"/></FormGroup></Col></Row>);
+    var incrementedList = this.state.ingredientComponents.concat(<FormControl key={this.rowKey} className="margin-bottom" type="text"/>);
     this.setState({ingredientComponents: incrementedList});
     this.rowKey++;
   }

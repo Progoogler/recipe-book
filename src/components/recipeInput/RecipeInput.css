@@ -4,11 +4,17 @@
   margin: 100px;
   margin-left: auto;
   margin-right: auto;
-  background-color: grey;
+  border-radius: 25px;
+  box-shadow: 0 0 15px grey;
+  background-color: #D3D3D3;
 }
 
 .center-block {
   float: none;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
 }
 
 .inline {
@@ -17,10 +23,17 @@
 
 .Recipe-Label {
   color: white;
+  text-shadow: 0 0 4px black;
 }
 
 .Save-Button {
   margin-left: 110px;
+}
+
+.Delete-Button {
+  margin-left: 10px;
+  background-color: grey;
+  color: white;
 }
 
 .Add-Button {
