@@ -1,8 +1,10 @@
 .Recipe-Container {
-  width: 1000px;
+  width: 550px;
+  padding: 50px 0;
   margin: 100px;
   margin-left: auto;
   margin-right: auto;
+  background-color: grey;
 }
 
 .center-block {
@@ -13,11 +15,15 @@
   display: inline-block;
 }
 
+.Recipe-Label {
+  color: white;
+}
+
 .Save-Button {
-  margin-left: 320px;
+  margin-left: 110px;
 }
 
 .Add-Button {
   float: right;
-  margin-right: 320px;
+  margin-right: 110px;
 }
