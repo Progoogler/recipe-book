@@ -1,4 +1,4 @@
-.Recipe-Container {
+.Empty-Container {
   width: 550px;
   padding: 50px 0;
   margin: 100px;
@@ -7,6 +7,11 @@
   border-radius: 25px;
   box-shadow: 0 0 15px grey;
   background-color: #D3D3D3;
+}
+
+.Recipe-Container {
+  width: 500px;
+  margin: 25px 10px;
 }
 
 .center-block {
@@ -26,17 +31,30 @@
   text-shadow: 0 0 4px black;
 }
 
-.Save-Button {
+.Recipe-Save-Button {
+  margin-left: 15px;
+}
+
+.Recipe-Delete-Button {
+  margin-left: 10px;
+}
+
+.Recipe-Add-Button {
+  float: right;
+  margin-right: 195px;
+}
+
+.Empty-Save-Button {
   margin-left: 110px;
 }
 
-.Delete-Button {
+.Empty-Delete-Button {
   margin-left: 10px;
   background-color: grey;
   color: white;
 }
 
-.Add-Button {
+.Empty-Add-Button {
   float: right;
   margin-right: 110px;
 }
