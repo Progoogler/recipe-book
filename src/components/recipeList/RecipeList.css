@@ -1,11 +1,19 @@
 .RecipeList-Container {
   width: 550px;
-  padding: 50px 0;
+  padding: 35px 0;
   margin: 100px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 25px;
   box-shadow: 0 0 15px grey;
+}
+
+.Title {
+  font-size: 2em;
+  font-weight: bold;
+  color: grey;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .center-block {
@@ -14,12 +22,4 @@
 
 .center {
   text-align: center;
-}
-
-
-.List-Group {
-
-}
-
-.Add-Button {
 }
