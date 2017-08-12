@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './RecipeList.css';
 import RecipeInput from '../recipeInput/RecipeInput';
-// import ListItem from './ListItem';
 import { Col, Button, ListGroup, ListGroupItem} from 'react-bootstrap';
 
 
@@ -10,9 +9,7 @@ class RecipeList extends Component {
     super();
     this.state = {
       addingNewRecipe: false,
-      list: [
-
-      ],
+      list: [],
     };
     this.toggleAddingRecipe = this.toggleAddingRecipe.bind(this);
     this.toggleDisplayRecipe = this.toggleDisplayRecipe.bind(this);
@@ -24,6 +21,15 @@ class RecipeList extends Component {
   }
 
   render() {
+    // Set certain list items to active style
+    for (let i = 0; i < this.state.list.length; i++) {
+      if (i < this.state.list.length - 1 && this.state.list[i + 1].display) {
+        this[i] = true;
+      } else {
+        this[i] = false;
+      }
+    }
+
     return (
 
       <div>
@@ -96,7 +102,6 @@ class RecipeList extends Component {
       this[index] = false;
       displayList.splice(index + 1, 1);
     } else {
-      this[index] = true;
       displayList.splice(index + 1, 0, {display: true});
     }
     this.setState({list: displayList});
